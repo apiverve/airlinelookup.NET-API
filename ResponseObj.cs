@@ -4,42 +4,43 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class data
-{
-    [JsonProperty("Name")]
-    public string name { get; set; }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("Name")]
+        public string Name { get; set; }
 
-    [JsonProperty("Alias")]
-    public string alias { get; set; }
+        [JsonProperty("Alias")]
+        public string Alias { get; set; }
 
-    [JsonProperty("IATA")]
-    public string iATA { get; set; }
+        [JsonProperty("IATA")]
+        public string IATA { get; set; }
 
-    [JsonProperty("ICAO")]
-    public string iCAO { get; set; }
+        [JsonProperty("ICAO")]
+        public string ICAO { get; set; }
 
-    [JsonProperty("Callsign")]
-    public string callsign { get; set; }
+        [JsonProperty("Callsign")]
+        public string Callsign { get; set; }
 
-    [JsonProperty("Country")]
-    public string country { get; set; }
+        [JsonProperty("Country")]
+        public string Country { get; set; }
 
-}
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
+        [JsonProperty("data")]
+        public Data[] Data { get; set; }
 
-    [JsonProperty("data")]
-    public data[] data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
